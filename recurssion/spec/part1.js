@@ -5,7 +5,7 @@
 
   describe('Exercises in Recursion', function() {
 
-    describe('1. Sum of Integers', function() {
+    describe('1.Sum of Integers', function() {
       var originalSum;
 
       before(function() {

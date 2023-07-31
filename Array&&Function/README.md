@@ -23,11 +23,13 @@
 
 2. Write a sentence in plain English describing how `square(square(15))` is
    evaluated.
+   first he start with calculating the square of 15 then he save this result and return the square of it.
+
 
 3. Rename `square`'s `num` parameter in your above code to `monkey`, and
    rename the uses of that parameter in the body to `monkey` as well. Will the
    function `square` still work? Why or why not?
-
+Yes it still work 
 4. What is wrong with the following definitions of `square`? Write a sentence or
    two describing the issue(s); then, try copying the erroneous examples into a
    console one-at-a-time and observing the error(s) generated (you may have to
@@ -36,15 +38,15 @@
 
    ```js
    function square(monkey) {
-     return x * x;
+     return monkey * monkey;
    }
 
-   function square(5) {
+   function square() {
      return 5 * 5;
    }
 
-   function square("x") {
-     return "x" * "x";
+   function square(x) {
+     return x * x;
    }
    ```
 
@@ -52,17 +54,17 @@
    invalid definitions into your console and then edit them there):
 
    ```js
-   func square1(x {
+   function square1(x) {
      return x * x;
    }
 
-   functionsquare2 x)
+   function square2 (x){
      return x * x;
    }
 
-   function (x) square3 {
+   function square3(3){
      return x * x;
-   ```
+   } ```
 
 6. The following functions exhibit poor style -- fix these issues using the
    original version of `square` as a reference.
@@ -70,7 +72,7 @@
    ```js
    function square(x){return x*x;}
 
-   function square (x) { return x *x;
+   function square(x){ return x *x;
    }
 
    function square(x)
@@ -83,6 +85,7 @@
 
   ```js
   function cube(x) {
+    return x*square(x)
     // your code here
   }
   ```
@@ -93,7 +96,8 @@
 
   ```js
   // don't forget the parameters!
-  function fullName() {
+  function fullName(firstname,lastname) {
+    return firstname+" "+lastname
     // your code here
   }
   fullName("John", "Doe") // => "John Doe"
@@ -102,9 +106,16 @@
 9. Write a function `average` that takes two numbers as input (parameters), and
    returns the average of those numbers.
 
+
+    function average(a,b){
+    return (a+b)/2
+  }
+
 10. Write a function `greeter` that takes a name as an argument and *greets*
     that name by returning something along the lines of `"Hello, <name>!"`
-
+function greeter(name){
+    return "hello"+" "+name
+}
 11. Using the document found at <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">this link</a>, translate the first page of geometric
     formulas into JavaScript functions.
 
@@ -112,10 +123,8 @@
     like this:
 
     ```js
-    function perimeterRect(l, w) {
-      return 2 * (l + w);
-    }
-    ```
+ 
+     ```
 
     **NOTE:** JavaScript provides some nifty mathematical functions and
     constants built into the language that you'll need for this exercise. The
@@ -140,7 +149,55 @@
 ### More Practice
 
 Translate the rest of the geometric formulas found <a href="http://www.gbcnv.edu/documents/ASC/docs/00000005.pdf" target="_blank">here</a> into JavaScript functions.
+ function areasquare(s){
+  return s * s 
+}
+function perimetersquare(s){
 
+return 4 * s
+
+}
+function arearect(l,w){
+return l*w
+}
+function areapar(l,h){
+return l * h 
+
+}
+
+function perimeterpar(){
+
+  return 2l + 2w ;
+}
+function areatrap(h,b1,b2){
+
+return 0.5*h*(b1+b2) 
+}
+
+function periemtertrap(s1,s2,b1,b2){
+
+return s1+s2+b1+b2;
+
+}
+function areatri(b,h){
+
+  return 0.5*b*h;
+}
+function periemtertri(s1,s2,b){
+
+return s1+s2+b
+
+}
+function areacircle(r){
+
+return r*r* Math.PI
+}
+
+function periemtercircle(d){
+
+return Math.PI*d
+
+} 
 ### Advanced (extra practice)
 
 1. Compound interest can be calculated with the formula:
@@ -164,6 +221,16 @@ Translate the rest of the geometric formulas found <a href="http://www.gbcnv.edu
 2. Write a `power` function that accepts the parameters `base` and `exponent`
    and returns the result. Replace `square` and `cube` with the `power` function
    you just wrote. Do not use `Math.pow`.
+function power(base,exponent){
+  var res=1
+  for(var i=0;i<exponent;i++){
+    res*=base
+  }
+  return res
+}
+  
+
+
 
 3. Write your own square-root function called `sqrt` that accepts a `number`
    parameter and returns an approximate square root. Square-root approximations
